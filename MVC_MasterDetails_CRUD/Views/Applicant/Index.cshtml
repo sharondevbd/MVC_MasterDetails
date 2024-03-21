@@ -41,7 +41,11 @@
             @Html.DisplayFor(modelItem => item.TotalExprience)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PicPath)
+            @*@Html.HiddenFor(modelItem => item.PicPath)*@
+            @if(item.PicPath != null)
+                {
+                    <img src="@Url.Content(item.PicPath)" alt="@item.Name" class="img-thumbnail" style="width: 100px" />
+                }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IsAvilable)
